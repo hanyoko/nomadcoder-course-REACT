@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- 비어있는 div 생성 -->
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script>
+    //요소를 생성하는 오래된 방식
+        //react import - element를 생성하고 event listener를 더하는 것을 도와주기 때문에 필요
+        //react-dom import - react element들을 가져다가 HTML로 비꿔야 했기 때문에 필요
+        const root = document.getElementById("root");
+        //ReactJS로 HTML 코드 생성하는 createElement
+        //span 생성하기
+        const span = React.createElement(
+            //첫 번째 argument는 root에 들어갈 HTML 태그
+            "span",
+            //두 번째 argument는 props가 포함된 object
+            {
+                id: "good-span",
+                style: {color: "red"},
+            },
+            //세 번째 argument는 content
+            "Hello I'm a span"); 
+        
+        //h3 생성하기
+        const h3 = React.createElement(
+            //첫 번째 argument는 root에 들어갈 HTML 태그
+            "h3",
+            //두 번째 argument는 props가 포함된 object
+            {
+                //props 안에 event listener 등록하기
+                //마우스를 가져갔을 때
+                onMouseEnter: () => console.log("mouse enter"),
+            },
+            //세 번째 argument는 content
+            "Hello I'm a h3");
+
+        //button 생성하기
+        const btn = React.createElement(
+            //첫 번째 argument는 root에 들어갈 HTML 태그
+            "button",
+            //두 번째 argument는 props가 포함된 object
+            {
+                //props 안에 event listener 등록하기
+                //클릭했을 때
+                onClick: () => console.log("I'm Clicked"),
+                //style 넣기
+                style: {
+                    backgroundColor: "tomato"
+                }
+            },
+            //세 번째 argument는 content
+            "Click me");
+        const container = React.createElement("div", null, [h3, span, btn])
+        //생성한 element 코드 span을 body에 입력하기
+        //ReactDOM.render(span, root); //span을 root 안에 render 해달라는 말
+        //render의 의미는 React element를 가지고 HTML로 만들어 배치한다는 것
+        //=> 사용자에게 보여준다.
+        
+        //button을 body에 render
+        //ReactDOM.render(button, root);
+
+        //container에 render시킬 태그를 배열로 담아둔 것을 ReactDOM이 render
+        ReactDOM.render(container, root);
+    </script>
+</html>
