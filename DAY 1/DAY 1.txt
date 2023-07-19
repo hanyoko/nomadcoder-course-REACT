@@ -120,3 +120,5 @@ https://unpkg.com/@babel/standalone/babel.min.js 입력
 #2.6
 
  // 컴포넌트의 첫글자는 대문자로.
+
+
