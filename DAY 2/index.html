@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- 비어있는 div 생성 -->
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        const root = document.getElementById("root");
+        let counter = 0;
+        function countUp() {
+            //code
+        }
+        function App() {
+            const [counter, setCounter] = React.useState(0);
+            //React.useState() 함수는 counter 같은 데이터를 숫자형 데이터로 건네주고,
+            //그 데이터 값을 바꿀 함수도 함께 준다.
+            //그리고 그 함수를 이용해서 데이터를 바꿨을 때, 데이터 값이 바뀌고
+            //컴포넌트도 동시에 리렌더링 된다. 업데이트가 완료된다.
+            //데이터 이름을 붙일 때, '이름'을 붙이고 'set이름' 으로 설정한다 보통
+            const onClick = () => {
+                //counter = counter + 1;
+                setCounter(counter + 1)  //어떤 값을 부여하던 setCounter 함수는 그 값으로 업데이트 하고 리렌더링을 일으킨다.
+            }
+            return (
+                <div>   
+                    <h3>Total Clicks : {counter}</h3>  
+                    <button onClick={onClick}>Click Me</button>
+                </div>
+            )
+            
+        };
+
+        ReactDOM.render(<App />, root);
+    </script>
+</html>
