@@ -1,2 +1,28 @@
 DAY 4
 
+props : 일종의 방식. 부모 컴포넌트로부터 자식 컴포넌트에 데이터를 보낼 수 있게 해주는 방법
+ function Btn(props){
+            console.log(props);
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                }}
+            >{props.text}</button>
+        }
+        
+
+        function App() {
+          
+            return (
+                <div>
+                    // text는 내마음대로 설정가능하다.
+                    <Btn text="Save Changes" />
+                    <Btn text="Continue" />
+                </div>
+            ) 
+        };
+
+props를 설정해주고 텍스트가 들어갈 칸에 {props.특정이름} 을 설정하면 따로 컴포넌트를 만들지 않아도 이름이 변경된다.

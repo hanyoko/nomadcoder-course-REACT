@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- 비어있는 div 생성 -->
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        /*  props로만 꼭 적어줘야하는 것은 아니다.
+        function Btn(props){
+            console.log(props);
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                }}
+            >{props.text}</button>
+        }
+        */
+
+        //중괄호를 사용해서 오브젝트를 꺼낼 수 있다.
+        function Btn({ text, big }){
+            console.log({text, big});
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                //props를 기반으로 삼항연산자를 활용해서 if / else 문을 사용할 수 있다. 
+                //big이 존재한다면, fontSize는 18. 아니면 16
+                fontSize: big ? 18 : 16,
+                }}
+            >{ text }</button>
+        }
+
+        function App() {
+          
+            return (
+                <div>
+                    <Btn text="Save Changes" big={true} />
+                    <Btn text="Continue" big={false} />
+                </div>
+            ) 
+        };
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- 비어있는 div 생성 -->
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        function SaveBtn(){
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                }}
+            >Save Change</button>
+        }
+        function ConfirmBtn(){
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                }}
+            >Confirm</button>
+        }
+        //하지만 똑같은 것을 두번 적어주기엔 번거롭다.
+        //그래서 props 를 이용할 것이다 index3로 ㄱ
+
+        function App() {
+          
+            return (
+                <div>
+                    <SaveBtn />
+                    <ConfirmBtn />
+                </div>
+            ) 
+        };
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
+    </script>
+</html>
