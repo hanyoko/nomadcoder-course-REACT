@@ -26,3 +26,16 @@ props : 일종의 방식. 부모 컴포넌트로부터 자식 컴포넌트에 �
         };
 
 props를 설정해주고 텍스트가 들어갈 칸에 {props.특정이름} 을 설정하면 따로 컴포넌트를 만들지 않아도 이름이 변경된다.
+
+
+---
+
+props type 지정
+
+적용이 안 될 때 이렇게 변경해주니 해결되었다
+<!-- <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script> -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+
+props type은 optional이다.
+해도 되고 안 해도 된다.
+만약 꼭 하도록 하고싶으면 required 지정
