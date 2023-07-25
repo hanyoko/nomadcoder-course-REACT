@@ -1,0 +1,98 @@
+DAY 5
+
+node -v
+node 버전 확인하기
+
+만약 node.js 가 설치되어있지 않다면 설치하기
+https://nodejs.org/ko
+
+npx create-react-app
+react 패키지 설치
+
+package.json
+
+
+npm start 개발용 서버를 연다
+
+src 사용자의 모든 파일을 넣는 폴더
+
+직접 만들던 React 구문을 더이상 만들지않아도 된다.
+
+
+
+필요없는 파일.
+App.css
+App.test.js
+index.css
+logo.svg
+reportWebVitals.js
+setupTests.js
+
+---
+
+남아있어야하는 파일
+index.js
+App.js
+
+---
+
+css를 index.js에 import 시켜도 되지만 모든 태그에 적용된다.
+그래서 index.js에 적용시키지 않고 해당 태그에 스타일을 주는 것이 유용하다.
+
+return <button style={{
+        backgroundColor: "tomato",
+        color: "white"
+    }}>{ text }</button>;
+
+style.css 를 만들어 import 시켰을 때와 동일한 적용이 이루어짐
+
+create-react-app으로 작업할 때의 포인트는 분할하고 정복하는 것 !
+
+또 다른 방법으로는 페이지의 모듈 css를 만드는 것이다.
+
+Button에 적용시킬 css 모듀로 Button.module.css 로 변경해준다.
+
+
+---
+
+state를 change 해왔고, 그럴 때마다 모든 것이 다시 실행된다.
+counter에 0이 아니라 새로운 값이 들어가는 것만 빼고는 똑같이 function이 다시 실행되는 것이다.
+
+API를 통해 데이터를 가져올 때
+첫번째 component render에서 API를 call 하고, 이후에 state가 변화할 때 그 API에서 데이터를 또 가져오고 싶지는 않을 것이다.
+
+ 
+어떻게 특정 코드들이 첫번째 component render에서만 실행되게 하는지 배울 것이다.
+나중에 state가 변화되어도 api는 실행되지않는다.
+
+정리하자면, 코드를 작성하고 실행하면서 state를 변경할 때 항상 모드느 code들은 다시 실행된다.
+가끔은 이게 괜찮지만, 가끔은 나의 component 내부의 몇몇 코드는
+처음 딱 한번만 실행되고 다시는 실행되지 않도록 하고 싶을 수도 있다 
+그것에 대해 공부해볼 것이다. !
+
+---
+
+useEffect()
+두개의 argument를 가지는 function이다.
+첫번째 argument는 우리가 딱 한번만 실행하고 싶은 코드
+두번째 argument는 만약 keyword가 변화할 때 코드를 실행하고 싶다면, [] 자리에 keyword를 써준다.
+여기서 하는 건, 이 "keyword"가 변화할 때 코드를 실행할 거라고 react.js에게 알려주는 것
+
+---
+
+I run all the time
+App.js:22 CALL THE API ....
+App.js:25 SEARCH FOR 
+
+처음에는 모든 코드가 실행된다.
+
+click me 를 클릭하면 
+I run all the time만 실행된다.
+
+
+
+
+
+
+
+
