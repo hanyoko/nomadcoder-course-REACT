@@ -42,3 +42,9 @@ key를 생성해줘서 오류 해결
 state를 이용해서 component를 refresh 할 새로운 array를 만들기만 하고 todos에 있는 각각의 item으로 li를 만들었다
 그걸 하기 위해서 좋은 방법은 각각의 item 별로 li를 만들어서 넣는 것.
 todos는 string으로 구성된 array이기 때문.
+
+
+---
+
+router는 URL을 보고 있는 컴포넌트
+
