@@ -1,0 +1,44 @@
+DAY 6
+
+자바스크립트 라면 배열을 수정할 때 push 를 사용하겠지만
+리액트에서는 불가능하다.
+
+state를 수정하는 함수를 만들어서 수정해준다.
+
+const [todos, setTodos] = useState([]); -> 배열을 수정하는 함수
+
+
+const number = [1, 2, 3, 4]
+	undefined
+[6, number]
+	[6, Array(4)]
+[6, ...number]
+	[6, 1, 2, 3, 4]
+
+... 스프레이드 함수를 이용해서 number의 element를 돌려주게된다.
+
+---
+
+map은 하나의 array에 있는 item을 내가 원하는 무엇이든지로 바꿔주는 역할을 한다.
+
+
+
+react-jsx-dev-runtime.development.js:87 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `App`. See https://reactjs.org/link/warning-keys for more information.
+    at li
+    at App (http://localhost:3000/static/js/bundle.js:27:74)
+
+key 오류
+
+{todos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+
+key를 생성해줘서 오류 해결	
+
+---
+
+state를 이용해서 component를 refresh 할 새로운 array를 만들기만 하고 todos에 있는 각각의 item으로 li를 만들었다
+그걸 하기 위해서 좋은 방법은 각각의 item 별로 li를 만들어서 넣는 것.
+todos는 string으로 구성된 array이기 때문.
