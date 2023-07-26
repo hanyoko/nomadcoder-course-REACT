@@ -90,6 +90,8 @@ App.js:25 SEARCH FOR
 click me 를 클릭하면 
 I run all the time만 실행된다.
 
+리액트 패키지 폴더 밖으로 꺼냄.
+
 
 
 
